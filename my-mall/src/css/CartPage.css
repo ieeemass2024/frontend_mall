@@ -1,0 +1,19 @@
+.cart-page {
+  padding: 20px;
+}
+
+.cart-page h2 {
+  text-align: center;
+}
+
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.checkout span {
+  font-size: 18px;
+  font-weight: bold;
+}

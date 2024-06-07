@@ -1,0 +1,79 @@
+.my-page {
+  padding: 0 10px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  height: 150px;
+  background: linear-gradient(to bottom, #e0f7fa, #fff); /* 浅蓝色渐变背景 */
+}
+
+.profile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.nickname {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.membership {
+  font-size: 14px;
+  color: gray;
+}
+
+.section {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 浅色阴影 */
+}
+
+.points-item, .menu-item, .settings-item {
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* padding: 20px; */
+}
+
+.menu-item, .settings-item {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border-bottom: 1px solid #f0f0f0; /* 浅色阴影线分隔 ，menu item现在都有线 后续有空可以只设置成Item下有线*/
+}
+
+.menu-item span, .settings-item span {
+  /* margin-left: 10px; */
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  width: 100%;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+}
+
+.section + .section {
+  margin-top: 20px;
+  border-top: 1px solid #f0f0f0; /* 浅色阴影线分隔 */
+}

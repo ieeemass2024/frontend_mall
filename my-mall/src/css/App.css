@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.app-container {
+  width: 400px; /* 手机屏幕的常见宽度 */
+  height: 745px; /* 手机屏幕的常见高度 */
+  margin: 0 auto; /* 居中 */
+  border: 1px solid #ccc; /* 为了更清晰地看到边界 */
+  overflow: auto; /* 处理内容溢出 */
+  position: relative; /* 确保导航栏绝对定位相对于这个容器*/
+  padding-bottom: 60px; /* 给底部导航栏留出空间 */
+}

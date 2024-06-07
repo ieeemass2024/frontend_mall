@@ -1,0 +1,24 @@
+.bottom-nav {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+}
+
+.bottom-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+
+.bottom-nav a span {
+  margin-top: 4px;
+  font-size: 12px;
+}
