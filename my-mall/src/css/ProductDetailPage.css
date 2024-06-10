@@ -54,4 +54,38 @@
     color: #fff;
     border: 1px solid #ff4d4f;
   }
-  
+  .ant-descriptions-view {
+    width: 100%;
+    overflow-x: auto; /* 添加水平滚动条以防止内容超出视口 */
+  }
+
+  .ant-descriptions-view table {
+    width: 100%;
+    table-layout: fixed; /* 确保表格布局是固定的 */
+    border-collapse: collapse; /* 确保表格单元格边框合并 */
+  }
+
+  .ant-descriptions-row {
+    display: table-row; /* 强制每个项作为表格行显示 */
+  }
+
+  .ant-descriptions-item-label,
+  .ant-descriptions-item-content {
+    display: table-cell; /* 强制每个标签和内容作为表格单元格显示 */
+    padding: 8px; /* 添加适当的内边距 */
+    vertical-align: middle; /* 垂直居中 */
+    border: 1px solid #f0f0f0; /* 添加边框使其更像表格 */
+    white-space: nowrap; /* 防止文字换行 */
+  }
+
+  .ant-descriptions-item-label {
+    font-weight: bold; /* 标签加粗 */
+    width: 150px; /* 设置标签列的固定宽度 */
+  }
+
+  .ant-descriptions-item-content {
+    width: calc(100% - 150px); /* 内容列的宽度为表格宽度减去标签列宽度 */
+  }
+
+
+
