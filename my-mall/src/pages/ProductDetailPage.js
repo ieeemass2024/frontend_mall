@@ -180,7 +180,7 @@ const ProductDetailPage = () => {
       <Divider />
       <Descriptions
           title="商品规格"
-          column={{xs: 1, sm: 1, md: 1}}
+          column={{xs: 1, sm: 1, md: 1, lg: 1, xl: 1, xxl: 1}}
           bordered>
         {Object.entries(product.specs).map(([key, value]) => (
           <Descriptions.Item label={key} key={key}>{value}</Descriptions.Item>
