@@ -101,6 +101,10 @@
   background-color: #45a049;
   transform: translateY(-2px);
 }
+.ant-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+}
 
 @keyframes fadeIn {
   from {

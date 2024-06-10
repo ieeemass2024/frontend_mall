@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
 import '../css/PayConfirmPage.css';
 
@@ -7,6 +7,11 @@ const PayConfirmPage = () => {
     const navigate = useNavigate();
 
     const [paymentMethod, setPaymentMethod] = useState('');
+    const [currentUser, setCurrentUser] = useState(null);
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        setCurrentUser(user);
+    }, []);
 
     // 获取购物车数据
     const currentOrder = JSON.parse(localStorage.getItem('currentOrder')) || [];
@@ -59,7 +64,7 @@ const PayConfirmPage = () => {
             <p className="payment-instruction">请确认支付以下订单：</p>
             <div className="payment-summary">
                 <p>订单金额总计：<span className="payment-amount">¥{currentOrder.orderAmount}</span></p>
-                <p>付款人：test</p>
+                <p>付款人：{currentUser ? currentUser.username : 'test'}</p>
             </div>
             <div className="payment-method">
                 <label>

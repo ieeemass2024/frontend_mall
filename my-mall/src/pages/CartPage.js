@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { List, Button, InputNumber, message } from 'antd';
+import { List, Button, InputNumber, Checkbox, message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import '../css/CartPage.css';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
-    const navigate = useNavigate();
+  const [selectedItems, setSelectedItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     setCartItems(storedCartItems);
   }, []);
-
-  const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   const handleQuantityChange = (id, value) => {
     const updatedItems = cartItems.map(item => item.id === id ? { ...item, quantity: value } : item);
@@ -23,21 +22,44 @@ const CartPage = () => {
   const handleRemove = (id) => {
     const updatedItems = cartItems.filter(item => item.id !== id);
     setCartItems(updatedItems);
+    setSelectedItems(selectedItems.filter(itemId => itemId !== id));
     localStorage.setItem('cartItems', JSON.stringify(updatedItems));
     message.success('商品已从购物车移除');
   };
 
-    const redirectToPayment = () => {
-        if(cartItems.length === 0) {
-            message.error('购物车为空');
-            return;
-        }
-        navigate('/order/2');
+  const handleSelect = (id) => {
+    setSelectedItems(prevSelected => {
+      if (prevSelected.includes(id)) {
+        return prevSelected.filter(itemId => itemId !== id);
+      } else {
+        return [...prevSelected, id];
+      }
+    });
+  };
+
+  const handleClearCart = () => {
+    setCartItems([]);
+    setSelectedItems([]);
+    localStorage.removeItem('cartItems');
+    message.success('购物车已清空');
+  };
+
+  const redirectToPayment = () => {
+    if (selectedItems.length === 0) {
+      message.error('请选择要结算的商品');
+      return;
     }
+    const selectedCartItems = cartItems.filter(item => selectedItems.includes(item.id));
+    navigate('/order/2', { state: { selectedCartItems, type: '2' } });
+  };
+
+  const totalAmount = cartItems
+    .filter(item => selectedItems.includes(item.id))
+    .reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
     <div className="cart-page">
-      <p>购物车</p>
+      <h2>购物车</h2>
       <List
         itemLayout="horizontal"
         dataSource={cartItems}
@@ -52,6 +74,10 @@ const CartPage = () => {
               <Button type="link" onClick={() => handleRemove(item.id)}>删除</Button>
             ]}
           >
+            <Checkbox 
+              checked={selectedItems.includes(item.id)}
+              onChange={() => handleSelect(item.id)}
+            />
             <List.Item.Meta
               title={item.name}
               description={`¥${item.price}`}
@@ -59,11 +85,11 @@ const CartPage = () => {
           </List.Item>
         )}
       />
-
       <div className="checkout">
         <span>总计: ¥{totalAmount}</span>
         <Button type="primary" onClick={redirectToPayment}>去结算</Button>
       </div>
+      <Button type="default" onClick={handleClearCart}>清空购物车</Button>
     </div>
   );
 };

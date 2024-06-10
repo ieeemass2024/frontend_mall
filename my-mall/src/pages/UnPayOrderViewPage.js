@@ -38,8 +38,8 @@ const UnPayOrderViewPage = () => {
                         <div className="item-details">
                             <h3>{item.name}</h3>
                             <ul>
-                                <li>颜色: {item.specs.颜色}</li>
-                                <li>存储容量: {item.specs.存储容量}</li>
+                                {/* <li>颜色: {item.specs.颜色}</li> */}
+                                {/* <li>存储容量: {item.specs.存储容量}</li> */}
                                 <li>数量: {item.quantity}</li>
                                 <li>价格: ¥{item.price}</li>
                             </ul>

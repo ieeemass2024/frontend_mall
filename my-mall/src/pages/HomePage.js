@@ -1,18 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Input, Carousel, Row, Col, Card } from 'antd';
 import { SearchOutlined, AppstoreOutlined, GiftOutlined, DollarOutlined, PercentageOutlined } from '@ant-design/icons';
 import '../css/HomePage.css';
 
 const { Search } = Input;
 
+const products = [
+  { id: 1, name: '小米12Pro', img: require('../img/product1.png') },
+  { id: 2, name: 'Redmi K50', img: require('../img/product2.png') },
+  { id: 3, name: 'Apple15ProMax', img: require('../img/product4.png') },
+  { id: 4, name: '三星S24Ultra', img: require('../img/product3.png') },
+  { id: 5, name: 'NIKE T恤', img: require('../img/product5.png') },
+  { id: 6, name: '中国李宁 短裤', img: require('../img/product6.png') },
+  { id: 7, name: 'TLC 65T7K', img: require('../img/product7.png') },
+  { id: 8, name: '小米 L75MA', img: require('../img/product9.png') },
+  { id: 9, name: '海信 Vidda R55 Pro', img: require('../img/product8.png') },
+  { id: 10, name: '海澜之家 短袖', img: require('../img/product10.png') }
+];
+
 const HomePage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredProducts, setFilteredProducts] = useState(products);
+
+  const handleSearch = (value) => {
+    setSearchTerm(value);
+    if (value === '') {
+      setFilteredProducts(products);
+    } else {
+      const filtered = products.filter(product =>
+        product.name.toLowerCase().includes(value.toLowerCase())
+      );
+      setFilteredProducts(filtered);
+    }
+  };
+
   return (
     <div className="home-page">
       <div className="search-bar">
         <Search
-          placeholder="请输入商品名 如: 手机"
+          placeholder="请输入商品名 如: 小米"
           enterButton={<SearchOutlined />}
           size="large"
+          onSearch={handleSearch}
         />
       </div>
       <Carousel autoplay className="carousel">
@@ -65,19 +94,14 @@ const HomePage = () => {
       <div className="hot-products">
         <h2>热门商品</h2>
         <Row gutter={[8, 8]} className="product-list">
-          <Col span={12}><Card onClick={() => window.location.href='/product/1'}><img src={require('../img/product1.png')} alt="商品1" /><div>小米12Pro</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/2'}><img src={require('../img/product2.png')} alt="商品2" /><div>Redmi K50</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/4'}><img src={require('../img/product3.png')} alt="商品3" /><div>三星S24Ultra</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/3'}><img src={require('../img/product4.png')} alt="商品4" /><div>Apple15ProMax</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/5'}><img src={require('../img/product5.png')} alt="商品5" /><div>NIKE T恤</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/6'}><img src={require('../img/product6.png')} alt="商品6" /><div>中国李宁 短裤</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/7'}><img src={require('../img/product7.png')} alt="商品7" /><div>TLC 65T7K</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/8'}><img src={require('../img/product9.png')} alt="商品8" /><div>小米 L75MA</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/9'}><img src={require('../img/product8.png')} alt="商品9" /><div>海信 Vidda R55 Pro</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/10'}><img src={require('../img/product10.png')} alt="商品10" /><div>海澜之家 短裤</div></Card></Col>
-          
-
-
+          {filteredProducts.map(product => (
+            <Col span={12} key={product.id}>
+              <Card onClick={() => window.location.href=`/product/${product.id}`}>
+                <img src={product.img} alt={product.name} />
+                <div>{product.name}</div>
+              </Card>
+            </Col>
+          ))}
         </Row>
       </div>
     </div>
