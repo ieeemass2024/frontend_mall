@@ -57,13 +57,14 @@
 }
 
 .brand-list .ant-card {
-  display: inline-block;
+  display: inline-flex; /* 修改为inline-flex */
   width: 100px; /* 调整宽度以适应更多项目 */
   height: 120px;
   text-align: center;
   cursor: pointer;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* 增加这行代码以垂直居中 */
   padding: 10px;
   margin-right: 10px; /* 增加间距以使卡片之间有空隙 */
 }
@@ -72,8 +73,13 @@
   width: 60px;
   height: 60px;
   object-fit: cover;
-  margin-bottom: 0px;
+  margin-bottom: 5px; /* 调整底部边距 */
 }
+
+.brand-list .ant-card div {
+  margin-top: 5px; /* 调整文本和图片之间的间距 */
+}
+
 
 
 
