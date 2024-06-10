@@ -21,10 +21,18 @@ const PaymentPage = () => {
         return new Date().getTime() + Math.random().toString(36).substr(2, 6);
     }
 
+    const getSumPayment = () => {
+        let sum = 0;
+        for (let i = 0; i < carItems.length; i++) {
+            sum += carItems[i].price * carItems[i].quantity;
+        }
+        return sum;
+    }
+
     // 支付方法
     const handlePay = () => {
         // 获取订单列表
-        const orderList = JSON.parse(localStorage.getItem('orderList')) || [];
+        const orderList = JSON.parse(localStorage.getItem('orders')) || [];
         // 模拟支付成功
         setTimeout(() => {
             // 将订单信息存储到localStorage
@@ -40,17 +48,17 @@ const PaymentPage = () => {
                 userAccount: 'test',
                 carItem: carItems
             });
-            localStorage.setItem('orderList', JSON.stringify(orderList));
+            localStorage.setItem('orders', JSON.stringify(orderList));
 
             // 清空购物车
-            if (type === 1) {
+            if (type === "1") {
                 localStorage.removeItem('singleCartItems');
-            } else if (type === 2) {
+            } else if (type === "2") {
                 localStorage.removeItem('cartItems');
             }
             // 跳转到支付成功页面
             navigate('/pay-success');
-        }, 2000);
+        }, 500);
     }
 
     return (
@@ -59,6 +67,7 @@ const PaymentPage = () => {
             <div className="order-details">
                 <ul>
                     <li>付款人: test</li>
+                    <li>付款金额: {getSumPayment()}</li>
                     <li>付款时间: {new Date().toLocaleString()}</li>
                     <li>收货地址: 北京交通大学16号宿舍楼</li>
                 </ul>
