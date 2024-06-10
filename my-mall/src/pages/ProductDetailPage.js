@@ -158,7 +158,7 @@ const ProductDetailPage = () => {
   const redirectToPayment = () => {
      localStorage.setItem('singleCartItems', JSON.stringify([]));
     addToSingleCart();
-    navigate('/payment/1');
+    navigate('/order/1');
   }
 
   if (!product) {
