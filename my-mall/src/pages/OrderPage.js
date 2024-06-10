@@ -34,7 +34,6 @@ const OrderPage = () => {
                 <ul>
                     <li>付款人: test</li>
                     <li>付款金额: {getSumPayment()}</li>
-                    <li>付款时间: {new Date().toLocaleString()}</li>
                     <li>收货地址: 北京交通大学16号宿舍楼</li>
                 </ul>
             </div>
