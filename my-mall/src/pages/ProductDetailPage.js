@@ -5,10 +5,10 @@ import { ArrowLeftOutlined } from '@ant-design/icons';
 import '../css/ProductDetailPage.css';
 
 const products = {
-  1: { 
-    name: '小米12 Pro', 
-    description: '天玑9000+处理器 5000万像素影像 2K超视感屏 120Hz屏幕 67W快充', 
-    price: 2999, 
+  1: {
+    name: '小米12 Pro',
+    description: '天玑9000+处理器 5000万像素影像 2K超视感屏 120Hz屏幕 67W快充',
+    price: 2999,
     oldPrice: 3299,
     img: require('../img/product1.png'),
     specs: {
@@ -18,10 +18,10 @@ const products = {
       屏幕尺寸: '6.67英寸'
     }
   },
-  2: { 
-    name: 'Redmi K50', 
-    description: '天玑8100 2K直屏 5500mAh电池 67W快充', 
-    price: 2099, 
+  2: {
+    name: 'Redmi K50',
+    description: '天玑8100 2K直屏 5500mAh电池 67W快充',
+    price: 2099,
     oldPrice: 2299,
     img: require('../img/product2.png'),
     specs: {
@@ -149,6 +149,11 @@ const ProductDetailPage = () => {
     message.success('商品已成功添加到购物车');
   };
 
+  const redirectToPayment = () => {
+    addToCart();
+    navigate('/payment');
+  }
+
   if (!product) {
     return <div>商品未找到</div>;
   }
@@ -173,7 +178,7 @@ const ProductDetailPage = () => {
       </Descriptions>
       <Divider />
       <div className="action-buttons">
-        <Button type="primary" className="buy-button">立即购买</Button>
+        <Button type="primary" className="buy-button" onClick={redirectToPayment}>立即购买</Button>
         <Button type="default" className="add-to-cart-button" onClick={addToCart}>加入购物车</Button>
       </div>
     </div>
