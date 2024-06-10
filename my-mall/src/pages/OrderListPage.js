@@ -9,7 +9,7 @@ const OrderListPage = () => {
     const orders = JSON.parse(localStorage.getItem('orders')) || [];
 
     const handleViewOrder = (orderNumber) => {
-        navigate(`/order-preview/${orderNumber}`);
+        navigate(`/order-view/${orderNumber}`);
     };
 
     if (orders.length === 0) {
