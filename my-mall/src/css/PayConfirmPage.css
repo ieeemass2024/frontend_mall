@@ -87,3 +87,28 @@
         transform: translateY(0);
     }
 }
+
+.payment-method {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.payment-method label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.payment-method label:hover {
+    background-color: #f0f0f0;
+}
+
+.payment-method input {
+    margin-right: 10px;
+}
