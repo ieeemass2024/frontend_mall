@@ -12,6 +12,8 @@ import Login from './pages/LoginPage';
 import Register from './pages/Register';
 import ForgotPassword from './pages/ForgotPassword';
 import ProductListPage from './pages/ProductListPage';
+import PaymentPage from "./pages/PaymentPage";
+import PaySuccessPage from "./pages/PaySuccessPage";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function AppContent() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/forgotpassword' element={<ForgotPassword />} />
+        <Route path='/payment' element={<PaymentPage/>} />
+        <Route path='/pay-success' element={<PaySuccessPage/>} />
       </Routes>
       {!showBottomNav && <BottomNav />}
     </div>
