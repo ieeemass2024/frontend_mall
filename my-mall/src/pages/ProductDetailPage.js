@@ -10,7 +10,7 @@ const products = {
     description: '天玑9000+处理器 5000万像素影像 2K超视感屏 120Hz屏幕 67W快充', 
     price: 2999, 
     oldPrice: 3299,
-    img: require('../img/product1.jpg'),
+    img: require('../img/product1.png'),
     specs: {
       颜色: '黑色',
       存储容量: '128G',
@@ -23,7 +23,7 @@ const products = {
     description: '天玑8100 2K直屏 5500mAh电池 67W快充', 
     price: 2099, 
     oldPrice: 2299,
-    img: require('../img/product2.jpg'),
+    img: require('../img/product2.png'),
     specs: {
       颜色: '蓝色',
       存储容量: '128G',
@@ -36,7 +36,7 @@ const products = {
         description: '骁龙8Gen3 2K直屏 5000mAh电池 45W快充',
         price: 8999,
         oldPrice: 9399,
-        img: require('../img/product3.jpg'),
+        img: require('../img/product3.png'),
         specs: {
             颜色: '钛灰，钛黑，钛慕紫，钛羽黄',
             存储容量: '512G',
@@ -49,14 +49,73 @@ const products = {
         description: '天玑8100 2K直屏 5500mAh电池 67W快充',
         price: 8999,
         oldPrice: 9399,
-        img: require('../img/product2.jpg'),
+        img: require('../img/product2.png'),
         specs: {
             颜色: '钛灰，钛黑，钛慕紫，钛羽黄',
             存储容量: '512G',
             电池容量: '5000mAh',
             屏幕尺寸: '6.8英寸'
         }
+    },
+    5: {
+        name: 'NIKE T恤',
+        description: '男款短袖T恤',
+        price: 299,
+        oldPrice: 399,
+        img: require('../img/product5.png'),
+        specs: {
+            颜色: '黑色',
+            尺码: 'M，L，XL'
+        }
+    },
+    6: {
+        name: '中国李宁 短裤',
+        description: '男款运动短裤',
+        price: 399,
+        oldPrice: 499,
+        img: require('../img/product6.png'),
+        specs: {
+            颜色: '黑色',
+            尺码: 'M，L，XL'
+        }
+    },
+    7: {
+        name: 'TLC',
+        description: '55英寸4K超高清智能电视',
+        price: 2999,
+        oldPrice: 3999,
+        img: require('../img/product7.png'),
+        specs: {
+            尺寸: '55英寸',
+            分辨率: '4K',
+            系统: 'Android'
+        }
+    },
+    8: {
+        name: '小米',
+        description: '55英寸4K超高清智能电视',
+        price: 3999,
+        oldPrice: 4999,
+        img: require('../img/product8.png'),
+        specs: {
+            尺寸: '55英寸',
+            分辨率: '4K',
+            系统: 'MIUI'
+        }
+    },
+    9: {
+        name: '海信',
+        description: '55英寸4K超高清智能电视',
+        price: 1999,
+        oldPrice: 2999,
+        img: require('../img/product8.png'),
+        specs: {
+            尺寸: '55英寸',
+            分辨率: '4K',
+            系统: 'VIDAA'
+        }
     }
+    
 
 };
 
