@@ -53,7 +53,9 @@ const OrderPage = () => {
                     </div>
                 ))}
             </div>
-            <button onClick={handleConfirm} className="payment-button">提价订单</button>
+            <div className="button-box">
+                <button onClick={handleConfirm} className="payment-button">提交订单</button>
+            </div>
         </div>
     );
 };

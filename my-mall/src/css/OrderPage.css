@@ -1,10 +1,9 @@
 
-
 .order-page {
     padding: 20px;
     position: relative;
     animation: fadeIn 1s ease-in-out;
-    height: 90%;
+    min-height: 800px;
 }
 
 .page-title {
@@ -95,10 +94,15 @@
     font-size: 14px;
 }
 
+.button-box{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
 .payment-button {
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
+
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
