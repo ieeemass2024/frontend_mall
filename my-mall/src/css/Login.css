@@ -1,0 +1,38 @@
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 667px;
+    background: linear-gradient(to bottom right, #3498db, #2ecc71); /* 渐变背景色 */
+  }
+  
+  
+  
+  .login-container {
+    width: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .label{
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 17%;
+    margin-left: 12%;
+  }
+  
+  .login-form {
+    margin-top: 20px;
+    width: 270px;
+    padding: 20px;
+    margin-left: 10;
+  }
+  
+  .login-form-forgot {
+    float: right;
+  }
+  
+  .login-form-button {
+    width: 100%;
+  }

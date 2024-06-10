@@ -1,0 +1,16 @@
+.register-label{
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 18%;
+    margin-left: 8%;
+}
+
+.register-form {
+    width: 290px;
+    padding-right: 40px;
+}
+
+
+.register-form-button {
+    width: 100%;
+  }
