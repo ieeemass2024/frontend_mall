@@ -21,6 +21,14 @@ const PaymentPage = () => {
         return new Date().getTime() + Math.random().toString(36).substr(2, 6);
     }
 
+    const getSumPayment = () => {
+        let sum = 0;
+        for (let i = 0; i < carItems.length; i++) {
+            sum += carItems[i].price * carItems[i].quantity;
+        }
+        return sum;
+    }
+
     // 支付方法
     const handlePay = () => {
         // 获取订单列表
@@ -59,6 +67,7 @@ const PaymentPage = () => {
             <div className="order-details">
                 <ul>
                     <li>付款人: test</li>
+                    <li>付款金额: {getSumPayment()}</li>
                     <li>付款时间: {new Date().toLocaleString()}</li>
                     <li>收货地址: 北京交通大学16号宿舍楼</li>
                 </ul>
