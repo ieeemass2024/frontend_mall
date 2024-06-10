@@ -10,7 +10,7 @@ const products = {
     description: '天玑9000+处理器 5000万像素影像 2K超视感屏 120Hz屏幕 67W快充', 
     price: 2999, 
     oldPrice: 3299,
-    img: require('../img/brand1.png'),
+    img: require('../img/product1.jpg'),
     specs: {
       颜色: '黑色',
       存储容量: '128G',
@@ -23,15 +23,41 @@ const products = {
     description: '天玑8100 2K直屏 5500mAh电池 67W快充', 
     price: 2099, 
     oldPrice: 2299,
-    img: require('../img/brand2.png'),
+    img: require('../img/product2.jpg'),
     specs: {
       颜色: '蓝色',
       存储容量: '128G',
       电池容量: '5500mAh',
       屏幕尺寸: '6.67英寸'
     }
-  }
-  // 添加更多商品信息...
+  },
+    3: {
+        name: '三星S24Ultra',
+        description: '骁龙8Gen3 2K直屏 5000mAh电池 45W快充',
+        price: 8999,
+        oldPrice: 9399,
+        img: require('../img/product3.jpg'),
+        specs: {
+            颜色: '钛灰，钛黑，钛慕紫，钛羽黄',
+            存储容量: '512G',
+            电池容量: '5000mAh',
+            屏幕尺寸: '6.8英寸'
+        }
+    },
+    4: {
+        name: '',
+        description: '天玑8100 2K直屏 5500mAh电池 67W快充',
+        price: 8999,
+        oldPrice: 9399,
+        img: require('../img/product2.jpg'),
+        specs: {
+            颜色: '钛灰，钛黑，钛慕紫，钛羽黄',
+            存储容量: '512G',
+            电池容量: '5000mAh',
+            屏幕尺寸: '6.8英寸'
+        }
+    }
+
 };
 
 const ProductDetailPage = () => {
