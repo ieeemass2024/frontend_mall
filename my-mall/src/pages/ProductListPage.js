@@ -6,10 +6,10 @@ import '../css/ProductListPage.css';
 
 const products = {
   '1': [
-    { id: '1', name: '小米12pro', price: '2999',img: '2' },
+    { id: '1', name: '小米12pro', price: '2999',img: '1' },
     { id: '2', name: 'Redmi K50', price: '2099',img: '2'},
-    { id: '3', name: 'IPone 15pm',  price: '9999',img: '3'},
-    { id: '4', name: 'HUAWEI mate60', price: '9999',img: '1'}
+    { id: '3', name: 'IPhone 15pm',  price: '9999',img: '4'},
+    { id: '4', name: '三星S24Ultra', price: '3999',img: '3'}
   ],
   '2': [
     { id: '5', name: 'NIKE T恤', price: '299',img: '5'},
@@ -37,7 +37,7 @@ const ProductListPage = () => {
         {categoryProducts.map(product => (
           <Col span={12}>
             <Card onClick={() => window.location.href=`/product/${product.id}`}>
-              <img src={require(`../img/brand${product.img}.png`)} alt="product.name" />
+              <img src={require(`../img/product${product.img}.png`)} alt="product.name" />
               <div>{product.name}</div>
               <div className="product-price">
                 <div className="price">￥{product.price}</div>
