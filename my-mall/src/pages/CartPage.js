@@ -37,7 +37,7 @@ const CartPage = () => {
 
   return (
     <div className="cart-page">
-      <h2>购物车</h2>
+      <p>购物车</p>
       <List
         itemLayout="horizontal"
         dataSource={cartItems}
@@ -59,6 +59,7 @@ const CartPage = () => {
           </List.Item>
         )}
       />
+
       <div className="checkout">
         <span>总计: ¥{totalAmount}</span>
         <Button type="primary" onClick={redirectToPayment}>去结算</Button>
