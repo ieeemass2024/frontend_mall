@@ -4,17 +4,17 @@ import '../css/CategoryPage.css';
 
 const categories = {
   '服饰装扮': [
-    { name: '男装', icon: '👔' },
+    { name: '男装', icon: '👔' ,no:'2'},
     { name: '女装', icon: '👗' },
     { name: '童装', icon: '👕' }
   ],
   '手机数码': [
-    { name: '手机', icon: '📱' },
+    { name: '手机', icon: '📱' ,no:'1'},
     { name: '平板', icon: '💻' },
     { name: '配件', icon: '🔌' }
   ],
   '家用电器': [
-    { name: '电视', icon: '📺' },
+    { name: '电视', icon: '📺' ,no:'3'},
     { name: '空调', icon: '❄️' },
     { name: '洗衣机', icon: '🧺' }
   ],
@@ -38,13 +38,13 @@ const categories = {
 };
 
 const CategoryPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState('家具家装');
+  const [selectedCategory, setSelectedCategory] = useState('手机数码');
 
   return (
     <div className="category-page">
       <Menu
         mode="vertical"
-        defaultSelectedKeys={['家具家装']}
+        defaultSelectedKeys={['手机数码']}
         className="categories"
         onClick={(e) => setSelectedCategory(e.key)}
       >
@@ -57,7 +57,7 @@ const CategoryPage = () => {
         <Row gutter={[16, 16]} className="item-list">
           {categories[selectedCategory].map((item) => (
             <Col span={12} key={item.name}> {/* 调整为span={12}以便放下文字 */}
-              <Card>
+              <Card onClick={() => window.location.href= `/category/${item.no}`}>
                 <div className="item-icon">{item.icon}</div>
                 {item.name}
               </Card>

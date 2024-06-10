@@ -10,7 +10,7 @@ const products = {
     description: '天玑9000+处理器 5000万像素影像 2K超视感屏 120Hz屏幕 67W快充', 
     price: 2999, 
     oldPrice: 3299,
-    img: require('../img/brand1.png'),
+    img: require('../img/brand2.png'),
     specs: {
       颜色: '黑色',
       存储容量: '128G',
@@ -31,7 +31,8 @@ const products = {
       屏幕尺寸: '6.67英寸'
     }
   }
-  // 添加更多商品信息...
+  
+  
 };
 
 const ProductDetailPage = () => {

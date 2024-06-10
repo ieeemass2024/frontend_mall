@@ -1,0 +1,16 @@
+.product-price{
+    white-space: nowrap;
+    width: 100%;
+}
+.price{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ff0000;
+    
+}
+    
+.fu{
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #d0caca;
+}

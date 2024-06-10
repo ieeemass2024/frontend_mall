@@ -58,7 +58,7 @@ const HomePage = () => {
       <div className="hot-products">
         <h2>热门商品</h2>
         <Row gutter={[8, 8]} className="product-list">
-          <Col span={12}><Card onClick={() => window.location.href='/product/1'}><img src={require('../img/brand1.png')} alt="商品1" /><div>商品1</div></Card></Col>
+          <Col span={12}><Card onClick={() => window.location.href='/product/1'}><img src={require('../img/brand2.png')} alt="商品1" /><div>商品1</div></Card></Col>
           <Col span={12}><Card onClick={() => window.location.href='/product/2'}><img src={require('../img/brand2.png')} alt="商品2" /><div>商品2</div></Card></Col>
           <Col span={12}><Card onClick={() => window.location.href='/product/3'}><img src={require('../img/brand3.png')} alt="商品3" /><div>商品3</div></Card></Col>
           <Col span={12}><Card onClick={() => window.location.href='/product/4'}><img src={require('../img/brand4.png')} alt="商品4" /><div>商品4</div></Card></Col>

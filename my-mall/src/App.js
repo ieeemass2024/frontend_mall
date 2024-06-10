@@ -11,6 +11,7 @@ import './css/App.css';
 import Login from './pages/LoginPage';
 import Register from './pages/Register';
 import ForgotPassword from './pages/ForgotPassword';
+import ProductListPage from './pages/ProductListPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/category" element={<CategoryPage />} />
+        <Route path="/category/:categoryID" element={<ProductListPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/my" element={<MyPage />} />
         <Route path="/product/:productId" element={<ProductDetailPage />} />
