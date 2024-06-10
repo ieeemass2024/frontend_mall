@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Row, Col, Avatar } from 'antd';
 import { UserOutlined, EnvironmentOutlined, ClockCircleOutlined, HeartOutlined, StarOutlined } from '@ant-design/icons';
 import '../css/MyPage.css';
 
 const MyPage = () => {
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    setCurrentUser(user);
+  }, []);
+
   return (
     <div className="my-page">
       <div className="header">
         <div className="profile">
           <Avatar size={64} src={require('../img/profile.png')} />
-          <div className="nickname">member</div>
+          <div className="nickname">{currentUser ? currentUser.username : 'member'}</div>
           <div className="membership">黄金会员</div>
         </div>
       </div>

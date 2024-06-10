@@ -41,6 +41,6 @@
   margin: 0 auto; /* 居中 */
   border: 1px solid #ccc; /* 为了更清晰地看到边界 */
   overflow: auto; /* 处理内容溢出 */
-  position: flex; /* 确保导航栏绝对定位相对于这个容器*/
+  position: relative; /* 确保导航栏绝对定位相对于这个容器*/
   padding-bottom: 60px; /* 给底部导航栏留出空间 */
 }
