@@ -31,32 +31,32 @@ const products = {
       屏幕尺寸: '6.67英寸'
     }
   },
-    3: {
-        name: '三星S24Ultra',
-        description: '骁龙8Gen3 2K直屏 5000mAh电池 45W快充',
-        price: 8999,
-        oldPrice: 9399,
-        img: require('../img/product3.png'),
-        specs: {
-            颜色: '钛灰，钛黑，钛慕紫，钛羽黄',
-            存储容量: '512G',
-            电池容量: '5000mAh',
-            屏幕尺寸: '6.8英寸'
-        }
-    },
-    4: {
-        name: 'Apple15ProMax',
-        description: 'A15仿生芯片 120Hz ProMotion屏 5000mAh电池 20W快充',
-        price: 9999,
-        oldPrice: 10999,
-        img: require('../img/product4.png'),
-        specs: {
-            颜色: '银色，金色，深空灰色',
-            存储容量: '1TB',
-            电池容量: '5000mAh',
-            屏幕尺寸: '6.7英寸'
-        }
-    },
+  3: {
+    name: 'IPhone 15pm',
+    description: 'A16处理器 5000万像素影像 2K超视感屏 120Hz屏幕 67W快充',
+    price: 9999,
+    oldPrice: 10999,
+    img: require('../img/product4.png'),
+    specs: {
+      颜色: '黑色',
+      存储容量: '128G',
+      电池容量: '5160mAh',
+      屏幕尺寸: '6.67英寸'
+    }
+  },
+  4: {
+    name: '三星S24 Ultra',
+    description: '骁龙888处理器 5000万像素影像 2K超视感屏 120Hz屏幕 67W快充',
+    price: 3999,
+    oldPrice: 4299,
+    img: require('../img/product3.png'),
+    specs: {
+      颜色: '白色',
+      存储容量: '128G',
+      电池容量: '5160mAh',
+      屏幕尺寸: '6.67英寸'
+    }
+  },
     5: {
         name: 'NIKE T恤',
         description: '男款短袖T恤',

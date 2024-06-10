@@ -67,8 +67,8 @@ const HomePage = () => {
         <Row gutter={[8, 8]} className="product-list">
           <Col span={12}><Card onClick={() => window.location.href='/product/1'}><img src={require('../img/product1.png')} alt="商品1" /><div>小米12Pro</div></Card></Col>
           <Col span={12}><Card onClick={() => window.location.href='/product/2'}><img src={require('../img/product2.png')} alt="商品2" /><div>Redmi K50</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/3'}><img src={require('../img/product3.png')} alt="商品3" /><div>三星S24Ultra</div></Card></Col>
-          <Col span={12}><Card onClick={() => window.location.href='/product/4'}><img src={require('../img/product4.png')} alt="商品4" /><div>Apple15ProMax</div></Card></Col>
+          <Col span={12}><Card onClick={() => window.location.href='/product/4'}><img src={require('../img/product3.png')} alt="商品3" /><div>三星S24Ultra</div></Card></Col>
+          <Col span={12}><Card onClick={() => window.location.href='/product/3'}><img src={require('../img/product4.png')} alt="商品4" /><div>Apple15ProMax</div></Card></Col>
           <Col span={12}><Card onClick={() => window.location.href='/product/5'}><img src={require('../img/product5.png')} alt="商品5" /><div>NIKE T恤</div></Card></Col>
           <Col span={12}><Card onClick={() => window.location.href='/product/6'}><img src={require('../img/product6.png')} alt="商品6" /><div>中国李宁 短裤</div></Card></Col>
           <Col span={12}><Card onClick={() => window.location.href='/product/7'}><img src={require('../img/product7.png')} alt="商品7" /><div>TLC</div></Card></Col>
