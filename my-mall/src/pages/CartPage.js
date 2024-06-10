@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { List, Button, InputNumber, message } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import '../css/CartPage.css';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
+    const navigate = useNavigate();
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -24,6 +26,10 @@ const CartPage = () => {
     localStorage.setItem('cartItems', JSON.stringify(updatedItems));
     message.success('商品已从购物车移除');
   };
+
+    const redirectToPayment = () => {
+        navigate('/payment/2');
+    }
 
   return (
     <div className="cart-page">
@@ -51,7 +57,7 @@ const CartPage = () => {
       />
       <div className="checkout">
         <span>总计: ¥{totalAmount}</span>
-        <Button type="primary">去结算</Button>
+        <Button type="primary" onClick={redirectToPayment}>去结算</Button>
       </div>
     </div>
   );
