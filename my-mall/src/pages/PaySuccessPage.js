@@ -5,6 +5,8 @@ import '../css/PaySuccessPage.css';
 const PaySuccessPage = () => {
     const navigate = useNavigate();
 
+    
+
     const handleBackToCart = () => {
         navigate('/cart');
     }

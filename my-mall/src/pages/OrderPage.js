@@ -8,6 +8,7 @@ const OrderPage = () => {
 
     // 获取购物车数据
     let carItems = [];
+    console.log("type", type);
     if (type === "1") {
         carItems = JSON.parse(localStorage.getItem('singleCartItems'));
     } else if (type === "2") {
@@ -19,12 +20,36 @@ const OrderPage = () => {
         for (let i = 0; i < carItems.length; i++) {
             sum += carItems[i].price * carItems[i].quantity;
         }
+        console.log("sum", sum);
         return sum;
     }
 
+    // 用于生成订单序列
+    const getOrderNumber = () => {
+        return new Date().getTime() + Math.random().toString(36).substr(2, 6);
+    }
     // 支付方法
     const handleConfirm = () => {
-       navigate(`/pay-confirm/${type}`);
+        const orderList = JSON.parse(localStorage.getItem('orders')) || [];
+        // 创建未支付订单
+        orderList.push({
+            key: orderList.length + 1,
+            number: carItems.length,
+            orderAmount: carItems.reduce((total, item) => total + item.price * item.quantity, 0),
+              orderNumber: getOrderNumber(),
+            orderSource: 'APP订单',
+            orderStatus: '未发货',
+            payStatus: "未支付",
+            paymentMethod: "",
+            submitTime: new Date().toLocaleString(),
+            userAccount: 'test',
+            carItem: carItems
+        });
+        localStorage.setItem('orders', JSON.stringify(orderList));
+        console.log("orderList", orderList);
+        console.log("type", type);
+       
+        navigate(`/pay-confirm/${type}`);
     }
 
     return (

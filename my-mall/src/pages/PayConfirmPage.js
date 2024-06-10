@@ -8,6 +8,38 @@ const PayConfirmPage = () => {
 
     const [paymentMethod, setPaymentMethod] = useState('');
 
+    const init = () => {
+        
+        // 获取订单列表
+        const orderList = JSON.parse(localStorage.getItem('orders')) || [];
+        // 模拟支付成功
+        setTimeout(() => {
+            // 将订单信息存储到localStorage
+            orderList.push({
+                key: orderList.length + 1,
+                number: carItems.length,
+                orderAmount: carItems.reduce((total, item) => total + item.price * item.quantity, 0),
+                orderNumber: getOrderNumber(),
+                orderSource: 'APP订单',
+                orderStatus: '未发货',
+                payStatus: "未支付",
+                paymentMethod: "微信支付",
+                submitTime: new Date().toLocaleString(),
+                userAccount: 'test',
+                carItem: carItems
+            });
+            localStorage.setItem('orders', JSON.stringify(orderList));
+
+            // 清空购物车
+            if (type === "1") {
+                localStorage.removeItem('singleCartItems');
+            } else if (type === "2") {
+                localStorage.removeItem('cartItems');
+            }
+        }, 500);
+    }
+    //init();
+
     // 获取购物车数据
     let carItems = [];
     if (type === "1") {
@@ -40,20 +72,23 @@ const PayConfirmPage = () => {
         const orderList = JSON.parse(localStorage.getItem('orders')) || [];
         // 模拟支付成功
         setTimeout(() => {
-            // 将订单信息存储到localStorage
-            orderList.push({
-                key: orderList.length + 1,
-                number: carItems.length,
-                orderAmount: carItems.reduce((total, item) => total + item.price * item.quantity, 0),
-                orderNumber: getOrderNumber(),
-                orderSource: 'APP订单',
-                orderStatus: '未发货',
-                payStatus: "未支付",
-                paymentMethod: paymentMethod,
-                submitTime: new Date().toLocaleString(),
-                userAccount: 'test',
-                carItem: carItems
-            });
+            // 将未支付状态改成已支付
+            orderList[orderList.length - 1].payStatus = "已支付";
+            orderList[orderList.length - 1].paymentMethod = paymentMethod;
+            
+            // orderList.push({
+            //     key: orderList.length + 1,
+            //     number: carItems.length,
+            //     orderAmount: carItems.reduce((total, item) => total + item.price * item.quantity, 0),
+            //     orderNumber: getOrderNumber(),
+            //     orderSource: 'APP订单',
+            //     orderStatus: '未发货',
+            //     payStatus: "已支付",
+            //     paymentMethod: paymentMethod,
+            //     submitTime: new Date().toLocaleString(),
+            //     userAccount: 'test',
+            //     carItem: carItems
+            // });
             localStorage.setItem('orders', JSON.stringify(orderList));
 
             // 清空购物车
