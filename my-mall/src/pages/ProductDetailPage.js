@@ -45,16 +45,16 @@ const products = {
         }
     },
     4: {
-        name: '',
-        description: '天玑8100 2K直屏 5500mAh电池 67W快充',
-        price: 8999,
-        oldPrice: 9399,
-        img: require('../img/product2.png'),
+        name: 'Apple15ProMax',
+        description: 'A15仿生芯片 120Hz ProMotion屏 5000mAh电池 20W快充',
+        price: 9999,
+        oldPrice: 10999,
+        img: require('../img/product4.png'),
         specs: {
-            颜色: '钛灰，钛黑，钛慕紫，钛羽黄',
-            存储容量: '512G',
+            颜色: '银色，金色，深空灰色',
+            存储容量: '1TB',
             电池容量: '5000mAh',
-            屏幕尺寸: '6.8英寸'
+            屏幕尺寸: '6.7英寸'
         }
     },
     5: {
@@ -113,6 +113,17 @@ const products = {
             尺寸: '55英寸',
             分辨率: '4K',
             系统: 'VIDAA'
+        }
+    },
+    10: {
+        name: '海澜之家',
+        description: '男款短袖T恤',
+        price: 199,
+        oldPrice: 299,
+        img: require('../img/product10.png'),
+        specs: {
+            颜色: '白色',
+            尺码: 'M，L，XL'
         }
     }
     

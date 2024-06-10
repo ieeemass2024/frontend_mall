@@ -69,6 +69,15 @@ const HomePage = () => {
           <Col span={12}><Card onClick={() => window.location.href='/product/2'}><img src={require('../img/product2.png')} alt="商品2" /><div>Redmi K50</div></Card></Col>
           <Col span={12}><Card onClick={() => window.location.href='/product/3'}><img src={require('../img/product3.png')} alt="商品3" /><div>三星S24Ultra</div></Card></Col>
           <Col span={12}><Card onClick={() => window.location.href='/product/4'}><img src={require('../img/product4.png')} alt="商品4" /><div>Apple15ProMax</div></Card></Col>
+          <Col span={12}><Card onClick={() => window.location.href='/product/5'}><img src={require('../img/product5.png')} alt="商品5" /><div>NIKE T恤</div></Card></Col>
+          <Col span={12}><Card onClick={() => window.location.href='/product/6'}><img src={require('../img/product6.png')} alt="商品6" /><div>中国李宁 短裤</div></Card></Col>
+          <Col span={12}><Card onClick={() => window.location.href='/product/7'}><img src={require('../img/product7.png')} alt="商品7" /><div>TLC</div></Card></Col>
+          <Col span={12}><Card onClick={() => window.location.href='/product/8'}><img src={require('../img/product9.png')} alt="商品8" /><div>小米</div></Card></Col>
+          <Col span={12}><Card onClick={() => window.location.href='/product/9'}><img src={require('../img/product8.png')} alt="商品9" /><div>海信</div></Card></Col>
+          <Col span={12}><Card onClick={() => window.location.href='/product/10'}><img src={require('../img/product10.png')} alt="商品10" /><div>海澜之家</div></Card></Col>
+          
+
+
         </Row>
       </div>
     </div>
