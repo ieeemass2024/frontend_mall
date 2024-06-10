@@ -17,6 +17,8 @@ import PaySuccessPage from "./pages/PaySuccessPage";
 import PayConfirmPage from "./pages/PayConfirmPage";
 import OrderListPage from "./pages/OrderListPage";
 import OrderViewPage from "./pages/OrderViewPage";
+import UnPayListPage from './pages/UnPayList';
+import UnPayOrderViewPage from './pages/UnPayOrderViewPage';
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function AppContent() {
         <Route path='/pay-confirm/:type' element={<PayConfirmPage/>} />
         <Route path='/order-list' element={<OrderListPage/>} />
         <Route path='/order-view/:id' element={<OrderViewPage/>} />
+        <Route path='/order-unpaylist' element={<UnPayListPage/>} />
+        <Route path='/unpayorder-view/:id' element={<UnPayOrderViewPage/>} />
       </Routes>
       {!showBottomNav && <BottomNav />}
     </div>

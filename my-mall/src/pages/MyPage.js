@@ -36,7 +36,7 @@ const MyPage = () => {
             <div className="section">
                 <Row gutter={[16, 16]} className="menu">
                     <Col span={6}><div className="menu-item" onClick={() => handleNavigate('/order-list')}><UserOutlined /><span>全部订单</span></div></Col>
-                    <Col span={6}><div className="menu-item"><ClockCircleOutlined /><span>待付款</span></div></Col>
+                    <Col span={6}><div className="menu-item" onClick={() => handleNavigate('/order-unpaylist')}><ClockCircleOutlined /><span>待付款</span></div></Col>
                     <Col span={6}><div className="menu-item"><HeartOutlined /><span>待收货</span></div></Col>
                     <Col span={6}><div className="menu-item"><StarOutlined /><span>退换/售后</span></div></Col>
                 </Row>

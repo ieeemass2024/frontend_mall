@@ -36,7 +36,7 @@ const OrderPage = () => {
             key: orderList.length + 1,
             number: carItems.length,
             orderAmount: carItems.reduce((total, item) => total + item.price * item.quantity, 0),
-              orderNumber: getOrderNumber(),
+            orderNumber: getOrderNumber(),
             orderSource: 'APP订单',
             orderStatus: '未发货',
             payStatus: "未支付",
@@ -46,9 +46,14 @@ const OrderPage = () => {
             carItem: carItems
         });
         localStorage.setItem('orders', JSON.stringify(orderList));
-        console.log("orderList", orderList);
-        console.log("type", type);
-       
+        // 清空购物车
+        if (type === "1") {
+            localStorage.removeItem('singleCartItems');
+        } else if (type === "2") {
+            localStorage.removeItem('cartItems');
+        }
+       //存储当前订单信息
+        localStorage.setItem('currentOrder', JSON.stringify(orderList[orderList.length - 1]));
         navigate(`/pay-confirm/${type}`);
     }
 

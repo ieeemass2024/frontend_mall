@@ -8,58 +8,11 @@ const PayConfirmPage = () => {
 
     const [paymentMethod, setPaymentMethod] = useState('');
 
-    const init = () => {
-        
-        // 获取订单列表
-        const orderList = JSON.parse(localStorage.getItem('orders')) || [];
-        // 模拟支付成功
-        setTimeout(() => {
-            // 将订单信息存储到localStorage
-            orderList.push({
-                key: orderList.length + 1,
-                number: carItems.length,
-                orderAmount: carItems.reduce((total, item) => total + item.price * item.quantity, 0),
-                orderNumber: getOrderNumber(),
-                orderSource: 'APP订单',
-                orderStatus: '未发货',
-                payStatus: "未支付",
-                paymentMethod: "微信支付",
-                submitTime: new Date().toLocaleString(),
-                userAccount: 'test',
-                carItem: carItems
-            });
-            localStorage.setItem('orders', JSON.stringify(orderList));
-
-            // 清空购物车
-            if (type === "1") {
-                localStorage.removeItem('singleCartItems');
-            } else if (type === "2") {
-                localStorage.removeItem('cartItems');
-            }
-        }, 500);
-    }
-    //init();
-
     // 获取购物车数据
-    let carItems = [];
-    if (type === "1") {
-        carItems = JSON.parse(localStorage.getItem('singleCartItems'));
-    } else if (type === "2") {
-        carItems = JSON.parse(localStorage.getItem('cartItems'));
-    }
+    const currentOrder = JSON.parse(localStorage.getItem('currentOrder')) || [];
 
-    // 用于生成订单序列
-    const getOrderNumber = () => {
-        return new Date().getTime() + Math.random().toString(36).substr(2, 6);
-    }
+    console.log(currentOrder);
 
-    const getSumPayment = () => {
-        let sum = 0;
-        for (let i = 0; i < carItems.length; i++) {
-            sum += carItems[i].price * carItems[i].quantity;
-        }
-        return sum;
-    }
 
     // 支付方法
     const handlePay = () => {
@@ -72,9 +25,11 @@ const PayConfirmPage = () => {
         const orderList = JSON.parse(localStorage.getItem('orders')) || [];
         // 模拟支付成功
         setTimeout(() => {
-            // 将未支付状态改成已支付
-            orderList[orderList.length - 1].payStatus = "已支付";
-            orderList[orderList.length - 1].paymentMethod = paymentMethod;
+            // 更新订单状态
+            currentOrder.payStatus = '已支付';
+            currentOrder.paymentMethod = paymentMethod;
+            // 更新订单列表
+            orderList[currentOrder.key - 1] = currentOrder;
             
             // orderList.push({
             //     key: orderList.length + 1,
@@ -91,12 +46,8 @@ const PayConfirmPage = () => {
             // });
             localStorage.setItem('orders', JSON.stringify(orderList));
 
-            // 清空购物车
-            if (type === "1") {
-                localStorage.removeItem('singleCartItems');
-            } else if (type === "2") {
-                localStorage.removeItem('cartItems');
-            }
+            // 清空当前订单信息
+            localStorage.removeItem('`currentOrder`');
             // 跳转到支付成功页面
             navigate('/pay-success');
         }, 500);
@@ -107,7 +58,7 @@ const PayConfirmPage = () => {
             <h2 className="page-title">确认付款</h2>
             <p className="payment-instruction">请确认支付以下订单：</p>
             <div className="payment-summary">
-                <p>订单金额总计：<span className="payment-amount">¥{getSumPayment()}</span></p>
+                <p>订单金额总计：<span className="payment-amount">¥{currentOrder.orderAmount}</span></p>
                 <p>付款人：test</p>
             </div>
             <div className="payment-method">
