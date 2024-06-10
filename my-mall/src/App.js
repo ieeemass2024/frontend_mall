@@ -15,6 +15,8 @@ import ProductListPage from './pages/ProductListPage';
 import OrderPage from "./pages/OrderPage";
 import PaySuccessPage from "./pages/PaySuccessPage";
 import PayConfirmPage from "./pages/PayConfirmPage";
+import OrderListPage from "./pages/OrderListPage";
+import OrderViewPage from "./pages/OrderViewPage";
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function AppContent() {
         <Route path='/order/:type' element={<OrderPage/>} />
         <Route path='/pay-success' element={<PaySuccessPage/>} />
         <Route path='/pay-confirm/:type' element={<PayConfirmPage/>} />
+        <Route path='/order-list' element={<OrderListPage/>} />
+        <Route path='/order-view/:id' element={<OrderViewPage/>} />
       </Routes>
       {!showBottomNav && <BottomNav />}
     </div>

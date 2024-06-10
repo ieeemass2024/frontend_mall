@@ -48,6 +48,11 @@
   /* padding: 20px; */
 }
 
+.menu-item:hover, .settings-item:hover {
+  background-color: #f0f0f0; /* 浅色背景色 */
+    cursor: pointer;
+}
+
 .menu-item, .settings-item {
   display: flex;
   align-items: center;
