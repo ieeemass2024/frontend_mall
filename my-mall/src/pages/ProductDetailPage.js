@@ -126,7 +126,7 @@ const products = {
             尺码: 'M，L，XL'
         }
     }
-    
+
 
 };
 
@@ -149,9 +149,16 @@ const ProductDetailPage = () => {
     message.success('商品已成功添加到购物车');
   };
 
+    const addToSingleCart = () => {
+        let cartItems = JSON.parse(localStorage.getItem('singleCartItems')) || [];
+        cartItems.push({ ...product, id: productId, quantity: 1 });
+        localStorage.setItem('singleCartItems', JSON.stringify(cartItems));
+    };
+
   const redirectToPayment = () => {
-    addToCart();
-    navigate('/payment');
+     localStorage.setItem('singleCartItems', JSON.stringify([]));
+    addToSingleCart();
+    navigate('/payment/1');
   }
 
   if (!product) {

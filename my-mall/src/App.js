@@ -39,7 +39,7 @@ function AppContent() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/forgotpassword' element={<ForgotPassword />} />
-        <Route path='/payment' element={<PaymentPage/>} />
+        <Route path='/payment/:type' element={<PaymentPage/>} />
         <Route path='/pay-success' element={<PaySuccessPage/>} />
       </Routes>
       {!showBottomNav && <BottomNav />}
