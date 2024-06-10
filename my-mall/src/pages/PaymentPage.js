@@ -51,14 +51,14 @@ const PaymentPage = () => {
             localStorage.setItem('orderList', JSON.stringify(orderList));
 
             // 清空购物车
-            if (type === 1) {
+            if (type === "1") {
                 localStorage.removeItem('singleCartItems');
-            } else if (type === 2) {
+            } else if (type === "2") {
                 localStorage.removeItem('cartItems');
             }
             // 跳转到支付成功页面
             navigate('/pay-success');
-        }, 2000);
+        }, 500);
     }
 
     return (

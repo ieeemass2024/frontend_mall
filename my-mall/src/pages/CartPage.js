@@ -28,6 +28,10 @@ const CartPage = () => {
   };
 
     const redirectToPayment = () => {
+        if(cartItems.length === 0) {
+            message.error('购物车为空');
+            return;
+        }
         navigate('/payment/2');
     }
 
