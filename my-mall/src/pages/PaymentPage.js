@@ -32,7 +32,7 @@ const PaymentPage = () => {
     // 支付方法
     const handlePay = () => {
         // 获取订单列表
-        const orderList = JSON.parse(localStorage.getItem('orderList')) || [];
+        const orderList = JSON.parse(localStorage.getItem('orders')) || [];
         // 模拟支付成功
         setTimeout(() => {
             // 将订单信息存储到localStorage
@@ -48,7 +48,7 @@ const PaymentPage = () => {
                 userAccount: 'test',
                 carItem: carItems
             });
-            localStorage.setItem('orderList', JSON.stringify(orderList));
+            localStorage.setItem('orders', JSON.stringify(orderList));
 
             // 清空购物车
             if (type === "1") {
