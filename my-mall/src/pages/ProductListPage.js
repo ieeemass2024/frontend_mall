@@ -14,6 +14,7 @@ const products = {
   '2': [
     { id: '5', name: 'NIKE T恤', price: '299',img: '5'},
     { id: '6', name: '中国李宁 短裤', price: '399',img: '6'},
+    { id: '10', name: '海澜之家', price: '199',img: '10'}
   ],
   '3': [
     { id: '7', name: 'TLC', price: '2999',img: '7'},

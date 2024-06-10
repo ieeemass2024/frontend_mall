@@ -30,6 +30,104 @@ const products = {
       电池容量: '5500mAh',
       屏幕尺寸: '6.67英寸'
     }
+  },
+  3: { 
+    name: 'IPhone 15 Pro Max', 
+    description: 'A16仿生芯片 三摄像头 120Hz ProMotion屏幕', 
+    price: 9999, 
+    oldPrice: 10999,
+    img: require('../img/brand3.png'),
+    specs: {
+      颜色: '金色',
+      存储容量: '256G',
+      电池容量: '4352mAh',
+      屏幕尺寸: '6.7英寸'
+    }
+  },
+  4: { 
+    name: 'HUAWEI Mate 60', 
+    description: '麒麟9000芯片 三摄像头 66W快充 无线充电', 
+    price: 9999, 
+    oldPrice: 10999,
+    img: require('../img/brand1.png'),
+    specs: {
+      颜色: '白色',
+      存储容量: '256G',
+      电池容量: '4500mAh',
+      屏幕尺寸: '6.8英寸'
+    }
+  },
+  5:{
+    name: 'NIKE T恤',
+    description: '男士短袖T恤 透气舒适',
+    price: 299,
+    oldPrice: 399,
+    img: require('../img/brand5.png'),
+    specs: {
+      颜色: '黑色',
+      尺码: 'M',
+      材质: '纯棉'
+    }
+  },
+  6:{
+    name: '中国李宁 短裤',
+    description: '男士运动短裤 速干透气',
+    price: 399,
+    oldPrice: 499,
+    img: require('../img/brand6.png'),
+    specs: {
+      颜色: '灰色',
+      尺码: 'L',
+      材质: '涤纶'
+    }
+  },
+  7:{
+    name: 'TLC 55寸液晶电视',
+    description: '4K超高清 人工智能语音 无边框设计',
+    price: 2999,
+    oldPrice: 3499,
+    img: require('../img/brand7.png'),
+    specs: {
+      尺寸: '55英寸',
+      分辨率: '4K',
+      操作系统: 'Android'
+    }
+  },
+  8:{
+    name: '小米 65寸电视',
+    description: '4K超高清 人工智能语音 无边框设计',
+    price: 3999,
+    oldPrice: 4499,
+    img: require('../img/brand2.png'),
+    specs: {
+      尺寸: '65英寸',
+      分辨率: '4K',
+      操作系统: 'PatchWall'
+    }
+  },
+  9:{
+    name: '海信 50寸电视',
+    description: '4K超高清 人工智能语音 无边框设计',
+    price: 1999,
+    oldPrice: 2499,
+    img: require('../img/brand8.png'),
+    specs: {
+      尺寸: '50英寸',
+      分辨率: '4K',
+      操作系统: 'VIDAA'
+    }
+  },
+  10:{
+    name: '海澜之家 短袖衬衫',
+    description: '男士短袖衬衫 透气舒适',
+    price: 199,
+    oldPrice: 299,
+    img: require('../img/brand10.png'),
+    specs: {
+      颜色: '白色',
+      尺码: 'M',
+      材质: '涤纶'
+    }
   }
   
   
