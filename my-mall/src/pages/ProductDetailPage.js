@@ -64,7 +64,7 @@ const products = {
         oldPrice: 399,
         img: require('../img/product5.png'),
         specs: {
-            颜色: '黑色',
+            颜色: '白色',
             尺码: 'M，L，XL'
         }
     },
@@ -80,31 +80,31 @@ const products = {
         }
     },
     7: {
-        name: 'TLC',
-        description: '55英寸4K超高清智能电视',
-        price: 2999,
-        oldPrice: 3999,
+        name: 'TLC 65T7K',
+        description: '65英寸4K超高清智能电视',
+        price: 4299,
+        oldPrice: 4599,
         img: require('../img/product7.png'),
         specs: {
-            尺寸: '55英寸',
+            尺寸: '65英寸',
             分辨率: '4K',
             系统: 'Android'
         }
     },
     8: {
-        name: '小米',
-        description: '55英寸4K超高清智能电视',
+        name: '小米 L75MA',
+        description: '75英寸4K超高清智能电视',
         price: 3999,
         oldPrice: 4999,
-        img: require('../img/product8.png'),
+        img: require('../img/product9.png'),
         specs: {
-            尺寸: '55英寸',
+            尺寸: '75英寸',
             分辨率: '4K',
             系统: 'MIUI'
         }
     },
     9: {
-        name: '海信',
+        name: '海信 Vidda R55 Pro',
         description: '55英寸4K超高清智能电视',
         price: 1999,
         oldPrice: 2999,
@@ -116,7 +116,7 @@ const products = {
         }
     },
     10: {
-        name: '海澜之家',
+        name: '海澜之家 短袖',
         description: '男款短袖T恤',
         price: 199,
         oldPrice: 299,

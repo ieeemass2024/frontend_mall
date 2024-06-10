@@ -17,8 +17,8 @@ const products = {
     { id: '10', name: '海澜之家', price: '199',img: '10'}
   ],
   '3': [
-    { id: '7', name: 'TLC', price: '2999',img: '7'},
-    { id: '8', name: '小米', price: '3999',img: '2'},
+    { id: '7', name: 'TLC', price: '4299',img: '7'},
+    { id: '8', name: '小米', price: '3999',img: '9'},
     { id: '9', name: '海信', price: '1999',img: '8'}
 
   ]
