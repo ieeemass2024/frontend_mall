@@ -178,7 +178,10 @@ const ProductDetailPage = () => {
         <span className="old-price">¥{product.oldPrice}</span>
       </p>
       <Divider />
-      <Descriptions title="商品规格" bordered>
+      <Descriptions
+          title="商品规格"
+          column={{xs: 1, sm: 1, md: 1}}
+          bordered>
         {Object.entries(product.specs).map(([key, value]) => (
           <Descriptions.Item label={key} key={key}>{value}</Descriptions.Item>
         ))}
