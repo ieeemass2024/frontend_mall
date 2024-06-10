@@ -1,10 +1,10 @@
-/* PaymentPage.css */
 
-.payment-page {
+
+.order-page {
     padding: 20px;
     position: relative;
     animation: fadeIn 1s ease-in-out;
-    height: 94%;
+    height: 90%;
 }
 
 .page-title {
@@ -95,7 +95,7 @@
     font-size: 14px;
 }
 
-.confirm-payment-button {
+.payment-button {
     position: absolute;
     right: 20px;
     bottom: 10px;
@@ -108,7 +108,7 @@
     transition: background-color 0.3s ease;
 }
 
-.confirm-payment-button:hover {
+.payment-button:hover {
     background-color: #45a049;
 }
 

@@ -1,0 +1,89 @@
+/* PayConfirmPage.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+.payment-page {
+    position: relative;
+    padding: 20px;
+    background: #f9f9f9;
+    min-height: 90%;
+    color: #333;
+    font-family: 'Raleway', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    animation: slideDown 0.6s ease-in-out;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.payment-instruction {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.payment-summary {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.payment-summary p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.payment-amount {
+    font-weight: 700;
+    color: #4CAF50;
+    font-size: 1.5em;
+}
+
+.confirm-payment-button {
+    position: absolute;
+    bottom: 30px;
+    display: block;
+    width: 90%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.confirm-payment-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

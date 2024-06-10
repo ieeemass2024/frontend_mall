@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate, useParams } from "react-router-dom";
-import '../css/PaymentPage.css';
+import '../css/PayConfirmPage.css';
 
-const PaymentPage = () => {
+const PayConfirmPage = () => {
     const { type } = useParams();
     const navigate = useNavigate();
 
@@ -14,12 +14,12 @@ const PaymentPage = () => {
         carItems = JSON.parse(localStorage.getItem('cartItems'));
     }
 
-    console.log(carItems);
-
     // 用于生成订单序列
-    const orderNumber = () => {
+    const getOrderNumber = () => {
         return new Date().getTime() + Math.random().toString(36).substr(2, 6);
     }
+
+    const orderNum = getOrderNumber();
 
     const getSumPayment = () => {
         let sum = 0;
@@ -40,7 +40,7 @@ const PaymentPage = () => {
                 key: orderList.length + 1,
                 number: carItems.length,
                 orderAmount: carItems.reduce((total, item) => total + item.price * item.quantity, 0),
-                orderNumber: orderNumber(),
+                orderNumber: orderNum,
                 orderSource: 'APP订单',
                 orderStatus: '已关闭',
                 paymentMethod: '未支付',
@@ -63,34 +63,16 @@ const PaymentPage = () => {
 
     return (
         <div className="payment-page">
-            <h2 className="page-title">请确认订单</h2>
-            <div className="order-details">
-                <ul>
-                    <li>付款人: test</li>
-                    <li>付款金额: {getSumPayment()}</li>
-                    <li>付款时间: {new Date().toLocaleString()}</li>
-                    <li>收货地址: 北京交通大学16号宿舍楼</li>
-                </ul>
+            <h2 className="page-title">确认付款</h2>
+            <p className="payment-instruction">请确认支付以下订单：</p>
+            <div className="payment-summary">
+                <p>订单金额总计：<span className="payment-amount">¥{getSumPayment()}</span></p>
+                <p>订单编号：{orderNum}</p>
+                <p>付款人：test</p>
             </div>
-            <div className="cart-items">
-                {carItems.map((item) => (
-                    <div key={item.id} className="cart-item">
-                        <img src={item.img} alt={item.name} className="item-image" />
-                        <div className="item-details">
-                            <h3>{item.name}</h3>
-                            <ul>
-                                <li>颜色: {item.specs.颜色}</li>
-                                <li>存储容量: {item.specs.存储容量}</li>
-                                <li>数量: {item.quantity}</li>
-                                <li>价格: ¥{item.price}</li>
-                            </ul>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            <button onClick={handlePay} className="confirm-payment-button">确认支付</button>
+            <button onClick={handlePay} className="confirm-payment-button">支付订单</button>
         </div>
     );
 };
 
-export default PaymentPage;
+export default PayConfirmPage;

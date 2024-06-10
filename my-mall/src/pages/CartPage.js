@@ -32,7 +32,7 @@ const CartPage = () => {
             message.error('购物车为空');
             return;
         }
-        navigate('/payment/2');
+        navigate('/order/2');
     }
 
   return (
