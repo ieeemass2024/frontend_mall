@@ -45,9 +45,9 @@ const HomePage = () => {
         />
       </div>
       <Carousel autoplay className="carousel">
-        <div><img src={require('../img/image.png')} alt="carousel" /></div>
         <div><img src={require('../img/image1.png')} alt="carousel" /></div>
         <div><img src={require('../img/image2.png')} alt="carousel" /></div>
+        <div><img src={require('../img/image3.png')} alt="carousel" /></div>
       </Carousel>
       <Row gutter={[8, 8]} className="icons">
         <Col span={6}>
