@@ -57,7 +57,7 @@ const OrderPage = () => {
 
         localStorage.setItem('currentOrder', JSON.stringify(orderList[orderList.length - 1]));
         navigate(`/pay-confirm/${type}`);
-    }
+    } 
 
     return (
         <div className="order-page">
